@@ -6,7 +6,7 @@ import Footer from './_component/Footer'
 const LandingPage = () => {
   return (
     <div className='min-h-full flex flex-col'>
-      <div className='flex flex-col justify-center items-center flex-1 px-6 pb-10 gap-y-8 mt-24 text-center'>
+      <div className='flex flex-col justify-center md:justify-start items-center flex-1 px-6 pb-10 gap-y-8 text-center'>
         <Heading/>
         <Heroes/>
       </div>
