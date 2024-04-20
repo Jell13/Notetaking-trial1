@@ -7,6 +7,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { useMutation } from 'convex/react'
 import { api } from '@/convex/_generated/api'
 import { useRouter } from 'next/navigation'
+import { DropdownMenu,DropdownMenuTrigger,DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu'
 
 const Item = ({id,label, onClick, icon: Icon, active, documentIcon, isSearch, level=0, onExpand, expanded}) => {
   
@@ -77,9 +78,18 @@ const Item = ({id,label, onClick, icon: Icon, active, documentIcon, isSearch, le
         </kbd>
       )}
       {!!id && (
-        <div role='button' onClick={onCreate} className='ml-auto flex items-center gap-x-2'>
-          <div className='opacity-0 group-hover:opacity-100 h-full ml-auto rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600'>
-            <Plus className='h-4 w-4 text-muted-foreground'/>
+        <div className='ml-auto flex items-center gap-x-2'>
+          <DropdownMenu>
+            <DropDownMenuTrigger onClick={(e) => e.stopPropagation()} asChild>
+              <div role='button'>
+                
+              </div>
+            </DropDownMenuTrigger>
+          </DropdownMenu>
+          <div role='button' onClick={onCreate} className='ml-auto flex items-center gap-x-2'>
+            <div className='opacity-0 group-hover:opacity-100 h-full ml-auto rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600'>
+              <Plus className='h-4 w-4 text-muted-foreground'/>
+            </div>
           </div>
         </div>
       )}
